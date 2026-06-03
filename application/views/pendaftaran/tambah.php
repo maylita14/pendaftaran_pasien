@@ -14,6 +14,13 @@
 </select>
 
 <br>
+<select name="id_pasien" class="form-control">
+    <?php foreach($pasien as $p): ?>
+        <option value="<?= $p->id_pasien ?>">
+            <?= $p->nama ?>
+        </option>
+    <?php endforeach; ?>
+</select>
 
 <label>Dokter</label>
 <select name="id_dokter" class="form-control">

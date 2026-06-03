@@ -48,9 +48,23 @@
 <hr class="sidebar-divider my-0">
 
 <li class="nav-item">
-    <a class="nav-link" href="<?= site_url('laporan') ?>">
-        <i class="fas fa-fw fa-file-alt"></i>
-        <span>Laporan</span>
+    <a class="nav-link" href="<?= site_url('laporan/pasien'); ?>">
+        <i class="fas fa-fw fa-file"></i>
+        <span>Laporan Pasien</span>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="<?= site_url('laporan/dokter'); ?>">
+        <i class="fas fa-fw fa-file-medical"></i>
+        <span>Laporan Dokter</span>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="<?= site_url('laporan/pendaftaran'); ?>">
+        <i class="fas fa-file-alt"></i>
+        <span>Laporan Pendaftaran</span>
     </a>
 </li>
 

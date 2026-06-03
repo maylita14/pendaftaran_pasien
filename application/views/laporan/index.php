@@ -1,36 +1,38 @@
 <div class="container-fluid">
 
-<h1 class="h3 mb-4 text-gray-800">
-    Laporan Sistem
-</h1>
+    <h1 class="h3 mb-4 text-gray-800">
+        Dashboard Laporan
+    </h1>
 
-<table class="table table-bordered">
+    <div class="row">
 
-<tr>
-    <th>Total Pasien</th>
-    <td><?= $total_pasien ?></td>
-</tr>
+        <div class="col-md-4">
+            <div class="card bg-primary text-white mb-3">
+                <div class="card-body">
+                    Total Pasien
+                    <h3><?= $total_pasien; ?></h3>
+                </div>
+            </div>
+        </div>
 
-<tr>
-    <th>Total Dokter</th>
-    <td><?= $total_dokter ?></td>
-</tr>
+        <div class="col-md-4">
+            <div class="card bg-success text-white mb-3">
+                <div class="card-body">
+                    Total Dokter
+                    <h3><?= $total_dokter; ?></h3>
+                </div>
+            </div>
+        </div>
 
-<tr>
-    <th>Total Pendaftaran</th>
-    <td><?= $total_pendaftaran ?></td>
-</tr>
+        <div class="col-md-4">
+            <div class="card bg-info text-white mb-3">
+                <div class="card-body">
+                    Total Pendaftaran
+                    <h3><?= $total_pendaftaran; ?></h3>
+                </div>
+            </div>
+        </div>
 
-<tr>
-    <th>Total Disetujui</th>
-    <td><?= $total_disetujui ?></td>
-</tr>
-
-<tr>
-    <th>Total Ditolak</th>
-    <td><?= $total_ditolak ?></td>
-</tr>
-
-</table>
+    </div>
 
 </div>
