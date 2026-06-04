@@ -67,26 +67,67 @@ body{
 
         <div class="ml-auto">
 
-            <a href="<?= site_url('frontend/daftar'); ?>"
-               class="btn btn-light btn-lg mr-2">
+    <a href="<?= site_url('frontend/daftar'); ?>"
+       class="btn btn-light btn-lg mr-2">
+        <i class="fas fa-notes-medical"></i>
+        Daftar Berobat
+    </a>
 
-                <i class="fas fa-notes-medical"></i>
-                Daftar Berobat
+    <a href="<?= site_url('frontend/cek_status'); ?>"
+       class="btn btn-outline-light btn-lg mr-2">
+        <i class="fas fa-search"></i>
+        Cek Status
+    </a>
 
-            </a>
+    <?php if($this->session->userdata('login')) : ?>
 
-            <a href="<?= site_url('frontend/cek_status'); ?>"
-               class="btn btn-outline-light btn-lg">
+        <span class="text-white mr-3">
+            <i class="fas fa-user-circle"></i>
+            <?= $this->session->userdata('nama'); ?>
+        </span>
 
-                <i class="fas fa-search"></i>
-                Cek Status
+        <a href="<?= site_url('auth/logout'); ?>"
+           class="btn btn-danger btn-lg">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+        </a>
 
-            </a>
+    <?php else : ?>
 
-        </div>
+        <a href="<?= site_url('auth'); ?>"
+           class="btn btn-success btn-lg">
+            <i class="fas fa-sign-in-alt"></i>
+            Login
+        </a>
+
+    <?php endif; ?>
+
+</div>
 
     </div>
 </nav>
+
+<?php if($this->session->userdata('role') == 'pasien') : ?>
+<div class="container mt-4">
+    <div class="card shadow border-0">
+        <div class="card-body">
+
+            <h4 class="text-primary">
+                <i class="fas fa-user-circle"></i>
+                Selamat Datang,
+                <?= $this->session->userdata('nama'); ?>!
+            </h4>
+
+            <p class="mb-0 text-muted">
+                Anda berhasil login sebagai pasien.
+                Silakan melakukan pendaftaran berobat atau mengecek status pendaftaran Anda.
+            </p>
+
+        </div>
+    </div>
+</div>
+<?php endif; ?>
+
 <!-- Hero Section -->
 <section class="hero">
     <div class="container">

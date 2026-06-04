@@ -15,34 +15,54 @@ class Auth extends CI_Controller {
     }
 
     public function login()
-    {
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
+{
+    $username = $this->input->post('username');
+    $password = $this->input->post('password');
 
-        $user = $this->Auth_model->cek_login($username, $password);
+    // CEK ADMIN
+    $admin = $this->db->get_where('tb_admin', [
+        'username' => $username,
+        'password' => $password
+    ])->row();
 
-        if($user){
+    if($admin){
 
-            $data = [
-                'id_admin'   => $user->id_admin,
-                'username'   => $user->username,
-                'login'      => TRUE
-            ];
+        $this->session->set_userdata([
+            'id_admin' => $admin->id_admin,
+            'username' => $admin->username,
+            'role' => 'admin',
+            'login' => TRUE
+        ]);
 
-            $this->session->set_userdata($data);
-
-            redirect('dashboard');
-
-        }else{
-
-            $this->session->set_flashdata(
-                'error',
-                'Username atau Password salah'
-            );
-
-            redirect('auth');
-        }
+        redirect('dashboard');
     }
+
+    // CEK PASIEN
+    $pasien = $this->db->get_where('tb_pasien', [
+        'username' => $username,
+        'password' => $password
+    ])->row();
+
+    if($pasien){
+
+        $this->session->set_userdata([
+            'id_pasien' => $pasien->id_pasien,
+            'nama' => $pasien->nama,
+            'username' => $pasien->username,
+            'role' => 'pasien',
+            'login' => TRUE
+        ]);
+
+        redirect('frontend');
+    }
+
+    $this->session->set_flashdata(
+        'error',
+        'Username atau Password salah'
+    );
+
+    redirect('auth');
+}
 
     public function logout()
     {

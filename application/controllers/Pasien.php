@@ -73,6 +73,11 @@ class Pasien extends CI_Controller {
     $this->load->view('templates/footer');
 }
 
+public function dashboard()
+{
+    $this->load->view('pasien/frontend');
+}
+
 public function update($id)
 {
     $this->load->library('form_validation');

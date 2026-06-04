@@ -172,18 +172,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
                         </div>
 
-                        <div class="mb-4">
+                        <div class="form-group">
+    <label>Tanggal Kunjungan</label>
+    <input type="date"
+           name="tanggal_kunjungan"
+           class="form-control"
+           required>
+</div>
 
-                            <label class="form-label">
-                                Tanggal Kunjungan
-                            </label>
-
-                            <input type="date"
-                                   name="tanggal_daftar"
-                                   class="form-control"
-                                   required>
-
-                        </div>
+<div class="form-group">
+    <label>Jam Kunjungan</label>
+    <input type="time"
+           name="jam_kunjungan"
+           class="form-control"
+           required>
+</div>
 
                         <div class="text-center">
 

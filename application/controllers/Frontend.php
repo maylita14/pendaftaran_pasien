@@ -27,9 +27,15 @@ class Frontend extends CI_Controller {
         'nama' => $this->input->post('nama'),
         'alamat'      => $this->input->post('alamat'),
         'no_telp'       => $this->input->post('no_telp')
+        
     ];
 
-    $this->db->insert('tb_pasien', $data_pasien);
+    if($this->db->insert('tb_pasien', $data_pasien)){
+    echo "BERHASIL";
+} else {
+    echo $this->db->error()['message'];
+    exit;
+}
 
     $id_pasien = $this->db->insert_id();
 
@@ -39,12 +45,16 @@ class Frontend extends CI_Controller {
     // Simpan pendaftaran
     $nomor_pendaftaran = 'REG' . date('YmdHis');
 
-    $data_pendaftaran = [
+   $data_pendaftaran = [
     'nomor_pendaftaran' => $nomor_pendaftaran,
     'id_pasien'         => $id_pasien,
     'id_dokter'         => $this->input->post('id_dokter'),
     'keluhan'           => $this->input->post('keluhan'),
-    'tanggal_daftar'    => $this->input->post('tanggal_daftar'),
+
+    'tanggal_kunjungan' => $this->input->post('tanggal_kunjungan'),
+    'jam_kunjungan'     => $this->input->post('jam_kunjungan'),
+
+    'tanggal_daftar'    => date('Y-m-d H:i:s'),
     'status'            => 'Proses'
 ];
 
