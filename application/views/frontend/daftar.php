@@ -125,10 +125,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                             </label>
 
                             <input type="text"
-                                   name="no_hp"
-                                   class="form-control"
-                                   placeholder="08xxxxxxxxxx"
-                                   required>
+       name="no_telp"
+       class="form-control"
+       placeholder="08xxxxxxxxxx"
+       required>
 
                         </div>
 

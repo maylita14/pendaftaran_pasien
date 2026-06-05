@@ -26,7 +26,8 @@ class Frontend extends CI_Controller {
     $data_pasien = [
         'nama' => $this->input->post('nama'),
         'alamat'      => $this->input->post('alamat'),
-        'no_telp'       => $this->input->post('no_telp')
+        'no_telp'       => $this->input->post('no_telp'),
+        'tanggal_lahir' => $this->input->post('tanggal_lahir')
         
     ];
 

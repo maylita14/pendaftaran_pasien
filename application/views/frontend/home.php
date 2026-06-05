@@ -113,9 +113,69 @@ body{
         <div class="card-body">
 
             <h4 class="text-primary">
-                <i class="fas fa-user-circle"></i>
-                Selamat Datang,
-                <?= $this->session->userdata('nama'); ?>!
+                <div class="dropdown">
+
+    <a class="btn text-white dropdown-toggle"
+       href="#"
+       role="button"
+       id="dropdownProfile"
+       data-toggle="dropdown">
+
+        <img src="<?= base_url('uploads/profil/default.png'); ?>"
+             width="35"
+             height="35"
+             class="rounded-circle">
+
+        <?= $this->session->userdata('nama'); ?>
+
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-right shadow">
+
+        <div class="text-center p-3">
+
+            <img src="<?= base_url('uploads/profil/default.png'); ?>"
+                 width="80"
+                 height="80"
+                 class="rounded-circle mb-2">
+
+            <h6>
+                <?= $this->session->userdata('nama'); ?>
+            </h6>
+
+        </div>
+
+        <div class="dropdown-divider"></div>
+
+        <a class="dropdown-item"
+           href="<?= site_url('profil'); ?>">
+
+            <i class="fas fa-user"></i>
+            Profil Saya
+
+        </a>
+
+        <a class="dropdown-item"
+           href="<?= site_url('profil/edit'); ?>">
+
+            <i class="fas fa-edit"></i>
+            Edit Profil
+
+        </a>
+
+        <div class="dropdown-divider"></div>
+
+        <a class="dropdown-item text-danger"
+           href="<?= site_url('auth/logout'); ?>">
+
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+
+        </a>
+
+    </div>
+
+</div>
             </h4>
 
             <p class="mb-0 text-muted">
