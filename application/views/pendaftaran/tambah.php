@@ -52,6 +52,14 @@ class="form-control">
 
 <br>
 
+<div class="form-group">
+    <label>Username</label>
+    <input type="text"
+           name="username"
+           class="form-control"
+           required>
+</div>
+
 <button type="submit"
 class="btn btn-success">
 Simpan

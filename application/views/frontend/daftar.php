@@ -130,6 +130,30 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
        placeholder="08xxxxxxxxxx"
        required>
 
+       <div class="mb-3">
+    <label class="form-label">
+        Username
+    </label>
+
+    <input type="text"
+           name="username"
+           class="form-control"
+           placeholder="Masukkan username"
+           required>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">
+        Password
+    </label>
+
+    <input type="password"
+           name="password"
+           class="form-control"
+           placeholder="Masukkan password"
+           required>
+</div>
+
                         </div>
 
                         <div class="mb-3">

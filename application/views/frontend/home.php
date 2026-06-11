@@ -67,18 +67,6 @@ body{
 
         <div class="ml-auto">
 
-    <a href="<?= site_url('frontend/daftar'); ?>"
-       class="btn btn-light btn-lg mr-2">
-        <i class="fas fa-notes-medical"></i>
-        Daftar Berobat
-    </a>
-
-    <a href="<?= site_url('frontend/cek_status'); ?>"
-       class="btn btn-outline-light btn-lg mr-2">
-        <i class="fas fa-search"></i>
-        Cek Status
-    </a>
-
     <?php if($this->session->userdata('login')) : ?>
 
         <span class="text-white mr-3">
@@ -103,89 +91,32 @@ body{
     <?php endif; ?>
 
 </div>
+</div>
 
     </div>
 </nav>
 
 <?php if($this->session->userdata('role') == 'pasien') : ?>
+
 <div class="container mt-4">
-    <div class="card shadow border-0">
-        <div class="card-body">
 
-            <h4 class="text-primary">
-                <div class="dropdown">
+    <div class="alert alert-primary shadow">
 
-    <a class="btn text-white dropdown-toggle"
-       href="#"
-       role="button"
-       id="dropdownProfile"
-       data-toggle="dropdown">
+        <h4>
+            <i class="fas fa-user-circle"></i>
+            Selamat Datang,
+            <?= $this->session->userdata('nama'); ?>
+        </h4>
 
-        <img src="<?= base_url('uploads/profil/default.png'); ?>"
-             width="35"
-             height="35"
-             class="rounded-circle">
-
-        <?= $this->session->userdata('nama'); ?>
-
-    </a>
-
-    <div class="dropdown-menu dropdown-menu-right shadow">
-
-        <div class="text-center p-3">
-
-            <img src="<?= base_url('uploads/profil/default.png'); ?>"
-                 width="80"
-                 height="80"
-                 class="rounded-circle mb-2">
-
-            <h6>
-                <?= $this->session->userdata('nama'); ?>
-            </h6>
-
-        </div>
-
-        <div class="dropdown-divider"></div>
-
-        <a class="dropdown-item"
-           href="<?= site_url('profil'); ?>">
-
-            <i class="fas fa-user"></i>
-            Profil Saya
-
-        </a>
-
-        <a class="dropdown-item"
-           href="<?= site_url('profil/edit'); ?>">
-
-            <i class="fas fa-edit"></i>
-            Edit Profil
-
-        </a>
-
-        <div class="dropdown-divider"></div>
-
-        <a class="dropdown-item text-danger"
-           href="<?= site_url('auth/logout'); ?>">
-
-            <i class="fas fa-sign-out-alt"></i>
-            Logout
-
-        </a>
+        <p class="mb-0">
+            Anda berhasil login sebagai pasien.
+            Silakan melakukan pendaftaran berobat atau mengecek status pendaftaran Anda.
+        </p>
 
     </div>
 
 </div>
-            </h4>
 
-            <p class="mb-0 text-muted">
-                Anda berhasil login sebagai pasien.
-                Silakan melakukan pendaftaran berobat atau mengecek status pendaftaran Anda.
-            </p>
-
-        </div>
-    </div>
-</div>
 <?php endif; ?>
 
 <!-- Hero Section -->

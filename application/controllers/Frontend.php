@@ -24,12 +24,13 @@ class Frontend extends CI_Controller {
 {
     // Simpan data pasien
     $data_pasien = [
-        'nama' => $this->input->post('nama'),
-        'alamat'      => $this->input->post('alamat'),
-        'no_telp'       => $this->input->post('no_telp'),
-        'tanggal_lahir' => $this->input->post('tanggal_lahir')
-        
-    ];
+    'nama'           => $this->input->post('nama'),
+    'alamat'         => $this->input->post('alamat'),
+    'no_telp'        => $this->input->post('no_telp'),
+    'tanggal_lahir'  => $this->input->post('tanggal_lahir'),
+    'username'       => $this->input->post('username'),
+    'password'       => $this->input->post('password')
+];
 
     if($this->db->insert('tb_pasien', $data_pasien)){
     echo "BERHASIL";
